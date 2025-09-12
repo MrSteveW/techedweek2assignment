@@ -1,5 +1,5 @@
-const thumbImage = "thumb1.jpg";
-const mainImage = "plant1.jpg";
+const thumbImage = "assets/thumb1.webp";
+const mainImage = "assets/plant1.webp";
 
 const leftButton = document.getElementById("leftButton");
 
