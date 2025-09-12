@@ -3,6 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    />
     <link rel="stylesheet" href="style.css" />
     <link
       rel="stylesheet"
@@ -14,6 +18,8 @@
       href="https://fonts.googleapis.com/css2?family=Rouge+Script&display=swap"
       rel="stylesheet"
     />
+    <!-- Bootstrap instead -->
+
     <script src="app.js" defer></script>
     <title>Image gallery</title>
   </head>
@@ -32,17 +38,19 @@
             alt="alt text"
           ></i>
         </div>
-
-        <div class="large-image-container" id="largeImage"></div>
+        <!-- Display Container -->
+        <div class="display-container" id="displayContainer"></div>
         <div class="right-icon">
           <i
             class="fa fa-chevron-right fa-2x"
             aria-hidden="true"
-            id="thumbRight"
+            id="rightButton"
             aria-label="press right icon to move to next image"
           ></i>
+          <!-- # -->
+          <i class="bi bi-chevron-compact-right"></i>
         </div>
-        <div class="thumbnail-right">THUMB</div>
+        <div class="thumbnail-right" id="thumbRight"></div>
       </div>
     </div>
   </body>
