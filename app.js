@@ -6,7 +6,11 @@ const displayContainer = document.getElementById("displayContainer");
 
 //Create an array of images
 const images = [
-  { src: "assets/plant1.webp", alt: "plant1", caption: "A beautiful plant" },
+  {
+    src: "assets/plant1.webp",
+    alt: "plant1",
+    caption: "A first beautiful plant",
+  },
   {
     src: "assets/plant2.webp",
     alt: "plant2",
@@ -25,7 +29,7 @@ const images = [
   {
     src: "assets/plant5.webp",
     alt: "plant5",
-    caption: "A third, marvellous plant",
+    caption: "A fifth, marvellous plant",
   },
   {
     src: "assets/plant6.webp",
@@ -34,54 +38,49 @@ const images = [
   },
 ];
 
-//Initialise counter at 1
-let i = 1;
+//Initialise counter at 0
+let i = 0;
 
 //on load put first image in displayContainer
-displayContainer.innerHTML = i;
-thumbLeft.innerHTML = images.length;
-thumbRight.innerHTML = i + 1;
-displayContainer.appendChild;
+
+thumbLeft.style.backgroundImage = `url('${images[images.length - 1].src}')`;
+thumbRight.style.backgroundImage = `url('${images[i + 1].src}')`;
+displayContainer.style.backgroundImage = `url('${images[i].src}')`;
 
 leftButton.addEventListener("click", () => {
-  if (i == 2) {
-    thumbLeft.innerHTML = images.length;
+  if (i == 1) {
+    thumbLeft.style.backgroundImage = `url('${images[images.length - 1].src}')`;
     i -= 1;
-    displayContainer.innerHTML = i;
-    thumbRight.innerHTML = i + 1;
-  } else if (i == 1) {
-    i = images.length;
-    displayContainer.innerHTML = i;
-    thumbLeft.innerHTML = i - 1;
-    thumbRight.innerHTML = 1;
+    displayContainer.style.backgroundImage = `url('${images[i].src}')`;
+    thumbRight.style.backgroundImage = `url('${images[i + 1].src}')`;
+  } else if (i == 0) {
+    i = images.length - 1;
+    displayContainer.style.backgroundImage = `url('${images[i].src}')`;
+    thumbLeft.style.backgroundImage = `url('${images[i - 1].src}')`;
+    thumbRight.style.backgroundImage = `url('${images[0].src}')`;
   } else {
     i -= 1;
-    displayContainer.innerHTML = i;
-    thumbLeft.innerHTML = i - 1;
-    thumbRight.innerHTML = i + 1;
+    displayContainer.style.backgroundImage = `url('${images[i].src}')`;
+    thumbLeft.style.backgroundImage = `url('${images[i - 1].src}')`;
+    thumbRight.style.backgroundImage = `url('${images[i + 1].src}')`;
   }
 });
 
 rightButton.addEventListener("click", () => {
-  if (i == 5) {
-    thumbRight.innerHTML = 1;
+  if (i == images.length - 2) {
+    thumbRight.style.backgroundImage = `url('${images[0].src}')`;
     i += 1;
-    displayContainer.innerHTML = i;
-    thumbLeft.innerHTML = i - 1;
-  } else if (i == images.length) {
-    i = 1;
-    thumbLeft.innerHTML = images.length;
-    displayContainer.innerHTML = i;
-    thumbRight.innerHTML = 2;
+    displayContainer.style.backgroundImage = `url('${images[i].src}')`;
+    thumbLeft.style.backgroundImage = `url('${images[i - 1].src}')`;
+  } else if (i == images.length - 1) {
+    i = 0;
+    thumbLeft.style.backgroundImage = `url('${images[images.length - 1].src}')`;
+    displayContainer.style.backgroundImage = `url('${images[i].src}')`;
+    thumbRight.style.backgroundImage = `url('${images[1].src}')`;
   } else {
     i += 1;
-    displayContainer.innerHTML = i;
-    thumbLeft.innerHTML = i - 1;
-    thumbRight.innerHTML = i + 1;
+    displayContainer.style.backgroundImage = `url('${images[i].src}')`;
+    thumbLeft.style.backgroundImage = `url('${images[i - 1].src}')`;
+    thumbRight.style.backgroundImage = `url('${images[i + 1].src}')`;
   }
 });
-
-// leftButton.addEventListener("click", () => {
-//   thumbLeft.style.backgroundImage = `url('${thumbImage}')`;
-//   displayContainer.style.backgroundImage = `url('${mainImage}')`;
-// });
