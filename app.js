@@ -47,7 +47,7 @@ thumbLeft.style.backgroundImage = `url('${images[images.length - 1].src}')`;
 thumbRight.style.backgroundImage = `url('${images[i + 1].src}')`;
 displayContainer.style.backgroundImage = `url('${images[i].src}')`;
 
-leftButton.addEventListener("click", () => {
+function leftClick() {
   if (i == 1) {
     thumbLeft.style.backgroundImage = `url('${images[images.length - 1].src}')`;
     i -= 1;
@@ -64,9 +64,9 @@ leftButton.addEventListener("click", () => {
     thumbLeft.style.backgroundImage = `url('${images[i - 1].src}')`;
     thumbRight.style.backgroundImage = `url('${images[i + 1].src}')`;
   }
-});
+}
 
-rightButton.addEventListener("click", () => {
+function rightClick() {
   if (i == images.length - 2) {
     thumbRight.style.backgroundImage = `url('${images[0].src}')`;
     i += 1;
@@ -82,5 +82,21 @@ rightButton.addEventListener("click", () => {
     displayContainer.style.backgroundImage = `url('${images[i].src}')`;
     thumbLeft.style.backgroundImage = `url('${images[i - 1].src}')`;
     thumbRight.style.backgroundImage = `url('${images[i + 1].src}')`;
+  }
+}
+
+leftButton.addEventListener("click", leftClick);
+
+rightButton.addEventListener("click", rightClick);
+
+document.addEventListener("keydown", function (event) {
+  if (event.key === "ArrowLeft") {
+    leftClick();
+  }
+});
+
+document.addEventListener("keydown", function (event) {
+  if (event.key === "ArrowRight") {
+    rightClick();
   }
 });
