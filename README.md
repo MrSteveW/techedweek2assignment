@@ -22,7 +22,7 @@
 Wireframe layed out in Figma  
 Google fonts https://fonts.google.com/  
 Bootstrap https://icons.getbootstrap.com/  
-With thanks for these images [
+With thanks for these images [<br />
 Sanni Sahil https://unsplash.com/photos/green-plant-on-white-ceramic-pot-LEaK1Lmd1a8,<br />
 Annie Spratt https://unsplash.com/photos/red-and-green-leaves-on-white-background-IcxBbmxecEM,<br />
 Annie Spratt https://unsplash.com/photos/green-leaves-on-white-background-iWu70dv9vSM,<br />
