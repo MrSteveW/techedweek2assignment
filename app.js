@@ -10,32 +10,32 @@ const images = [
   {
     src: "assets/plant1.webp",
     alt: "plant1",
-    caption: "A first beautiful plant",
+    caption: "A beautiful clarinervium",
   },
   {
     src: "assets/plant2.webp",
     alt: "plant2",
-    caption: "A second, wonderful plant",
+    caption: "A colourful codiaeum",
   },
   {
     src: "assets/plant3.webp",
     alt: "plant3",
-    caption: "A third, marvellous plant",
+    caption: "A stylish monstera",
   },
   {
     src: "assets/plant4.webp",
     alt: "plant4",
-    caption: "A fourth, marvellous plant",
+    caption: "A tall sansevieria",
   },
   {
     src: "assets/plant5.webp",
     alt: "plant5",
-    caption: "A fifth, marvellous plant",
+    caption: "A gorgeous calathea",
   },
   {
     src: "assets/plant6.webp",
     alt: "plant6",
-    caption: "A sixth, marvellous plant",
+    caption: "A rubber plant, ficus elastica",
   },
 ];
 
