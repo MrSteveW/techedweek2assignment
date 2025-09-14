@@ -38,65 +38,58 @@ const images = [
   },
 ];
 
-//Initialise counter at 0
+//Initialise counters
 let i = 0;
+let j = images.length - 1;
+let k = 1;
 
-//on load put first image in displayContainer
+//on load first images
+displayImages(i, j, k);
 
-thumbLeft.style.backgroundImage = `url('${images[images.length - 1].src}')`;
-thumbRight.style.backgroundImage = `url('${images[i + 1].src}')`;
-displayContainer.style.backgroundImage = `url('${images[i].src}')`;
+//display images
+function displayImages(i, j, k) {
+  displayContainer.style.backgroundImage = `url('${images[i].src}')`;
+  thumbLeft.style.backgroundImage = `url('${images[j].src}')`;
+  thumbRight.style.backgroundImage = `url('${images[k].src}')`;
+}
 
 function leftClick() {
-  if (i == 1) {
-    thumbLeft.style.backgroundImage = `url('${images[images.length - 1].src}')`;
-    i -= 1;
-    displayContainer.style.backgroundImage = `url('${images[i].src}')`;
-    thumbRight.style.backgroundImage = `url('${images[i + 1].src}')`;
-  } else if (i == 0) {
-    i = images.length - 1;
-    displayContainer.style.backgroundImage = `url('${images[i].src}')`;
-    thumbLeft.style.backgroundImage = `url('${images[i - 1].src}')`;
-    thumbRight.style.backgroundImage = `url('${images[0].src}')`;
-  } else {
-    i -= 1;
-    displayContainer.style.backgroundImage = `url('${images[i].src}')`;
-    thumbLeft.style.backgroundImage = `url('${images[i - 1].src}')`;
-    thumbRight.style.backgroundImage = `url('${images[i + 1].src}')`;
+  if (i == 0) {
+    i = images.length;
+  } else if (j == 0) {
+    j = images.length;
+  } else if (k == 0) {
+    k = images.length;
   }
+  i -= 1;
+  j -= 1;
+  k -= 1;
+  displayImages(i % images.length, j % images.length, k % images.length);
 }
 
 function rightClick() {
-  if (i == images.length - 2) {
-    thumbRight.style.backgroundImage = `url('${images[0].src}')`;
-    i += 1;
-    displayContainer.style.backgroundImage = `url('${images[i].src}')`;
-    thumbLeft.style.backgroundImage = `url('${images[i - 1].src}')`;
-  } else if (i == images.length - 1) {
-    i = 0;
-    thumbLeft.style.backgroundImage = `url('${images[images.length - 1].src}')`;
-    displayContainer.style.backgroundImage = `url('${images[i].src}')`;
-    thumbRight.style.backgroundImage = `url('${images[1].src}')`;
-  } else {
-    i += 1;
-    displayContainer.style.backgroundImage = `url('${images[i].src}')`;
-    thumbLeft.style.backgroundImage = `url('${images[i - 1].src}')`;
-    thumbRight.style.backgroundImage = `url('${images[i + 1].src}')`;
-  }
+  i += 1;
+  j += 1;
+  k += 1;
+  displayImages(i % images.length, j % images.length, k % images.length);
 }
 
+//
 leftButton.addEventListener("click", leftClick);
 
 rightButton.addEventListener("click", rightClick);
 
 document.addEventListener("keydown", function (event) {
-  if (event.key === "ArrowLeft") {
-    leftClick();
+  if (event.key === "ArrowRight") {
+    rightClick();
   }
 });
 
 document.addEventListener("keydown", function (event) {
-  if (event.key === "ArrowRight") {
-    rightClick();
+  if (event.key === "ArrowLeft") {
+    i += 1;
+    j += 1;
+    k += 1;
+    displayImages(i % 6, j % 6, k % 6);
   }
 });
