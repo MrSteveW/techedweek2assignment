@@ -3,6 +3,7 @@ const leftButton = document.getElementById("leftButton");
 const thumbRight = document.getElementById("thumbRight");
 const rightButton = document.getElementById("rightButton");
 const displayContainer = document.getElementById("displayContainer");
+const caption = document.getElementById("caption");
 
 //Create an array of images
 const images = [
@@ -49,6 +50,8 @@ displayImages(i, j, k);
 //display images
 function displayImages(i, j, k) {
   displayContainer.style.backgroundImage = `url('${images[i].src}')`;
+  displayContainer.ariaLabel = `${images[i].alt}`;
+  caption.textContent = `${images[i].caption}`;
   thumbLeft.style.backgroundImage = `url('${images[j].src}')`;
   thumbRight.style.backgroundImage = `url('${images[k].src}')`;
 }
