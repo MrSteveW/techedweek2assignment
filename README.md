@@ -10,6 +10,7 @@
 - [x] I am so pleased with myself that I remembered how to use the modulo operator to create an infinite loop of images - I had previously used this approach in Python to encode/decode a Caesar cipher. I had so much fun thinking about this programmatically
 - [x] I used JavaScript to add an **aria-label** to each main image
 - [x] Arrow keys do move images left and right. Although I cannot get these keys to work combined with using the Windows Narrator
+- [x] I wanted to try Bootstrap for this week's assignment, to move on from Font Awesome icons. I know Bootstrap & CSS over huge libraries for quick styling, it's a bit clunky using it in HTML so I would like to know better ways of using these in the future.
 
 ## :pushpin: Unable to achieve
 

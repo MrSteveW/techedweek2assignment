@@ -77,22 +77,18 @@ function rightClick() {
   displayImages(i % images.length, j % images.length, k % images.length);
 }
 
-//
 leftButton.addEventListener("click", leftClick);
 
 rightButton.addEventListener("click", rightClick);
 
 document.addEventListener("keydown", function (event) {
-  if (event.key === "ArrowRight") {
-    rightClick();
+  if (event.key === "ArrowLeft") {
+    leftClick();
   }
 });
 
 document.addEventListener("keydown", function (event) {
-  if (event.key === "ArrowLeft") {
-    i += 1;
-    j += 1;
-    k += 1;
-    displayImages(i % 6, j % 6, k % 6);
+  if (event.key === "ArrowRight") {
+    rightClick();
   }
 });
